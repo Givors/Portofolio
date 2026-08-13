@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lury's World ✨</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="sidebar">
+    <div class="menu-icon" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" onclick="toggleMenu()">About Me</a>
+      <a href="#studio" onclick="toggleMenu()">Mini Studio</a>
+      <a href="#skills" onclick="toggleMenu()">Skills & Art</a>
+      <a href="#music" onclick="toggleMenu()">Music</a>
+      <a href="#stories" onclick="toggleMenu()">Stories</a>
+      <a href="#projects" onclick="toggleMenu()">Projects</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="hero-section" data-aos="zoom-in" data-aos-duration="1000">
+      <div class="avatar-bubble"></div>
+      <h1>Hi, I'm Lury</h1>
+      <p class="subtitle">Mahasiswa Pendidikan Khusus yang suka coba banyak hal baru!</p>
+    </section>
+
+    <section id="about" class="card-popup pastel-pink" data-aos="flip-up" data-aos-duration="800">
+      <div class="card-tag">About Me</div>
+      <p class="about-text">
+        "Satu kata yang menggambarkan aku adalah <strong>'aneh'</strong>. Awalnya cacian itu membuatku sesak sampai aku sadar, itu memang aku. Menjadi berbeda ternyata tidak buruk."
+      </p>
+    </section>
+
+    <section class="card-popup pastel-yellow" data-aos="fade-up" data-aos-duration="800">
+      <span class="badge">Signature Quote</span>
+      <h3 class="quote-text">"Observe anything in silence, then move ten steps ahead"</h3>
+    </section>
+
+    <section id="studio" class="card-popup pastel-blue" data-aos="zoom-in-up">
+      <h2>Mini Studio of Lury</h2>
+      <p class="section-desc">Momen & foto pilihan terkini:</p>
+      
+      <div class="photo-gallery" id="photoGallery">
+        <div class="photo-card">
+          <img src="https://picsum.photos/300/200?random=1" alt="Studio Moment">
+          <p class="caption">Candid hari ini</p>
+        </div>
+      </div>
+      
+      <button class="btn-secret" onclick="bukaModalPassword('foto')">
+        <i class="fas fa-lock"></i> + Tambah Foto (Owner Only)
+      </button>
+    </section>
+
+    <section id="skills" class="card-popup pastel-lavender" data-aos="fade-up">
+      <h2>Skills & Refleksi Diri</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="fas fa-magic"></i>
+          <h4>Perfeksionis Tinggi</h4>
+          <p>Makanya aku suka desain dan jadi editor.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-brain"></i>
+          <h4>Overthinker</h4>
+          <p>Makanya aku jadi author cerita.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-palette"></i>
+          <h4>Suka yang Tak Dimiliki</h4>
+          <p>Makanya aku suka gambar & melukis.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-music"></i>
+          <h4>Pemikir yang Dalam</h4>
+          <p>Makanya suka aransemen lagu & main kalimba.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-moon"></i>
+          <h4>Suka Begadang</h4>
+          <p>Makanya aku suka nge-game.</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-language"></i>
+          <h4>Suka Keunikan</h4>
+          <p>Makanya aku belajar banyak bahasa.</p>
+        </div>
+        <div class="skill-item highlight-skill">
+          <i class="fas fa-rocket"></i>
+          <h4>Suka Coba Hal Baru</h4>
+          <p>Jadilah website ini!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="card-popup pastel-purple" data-aos="fade-up">
+      <h2>Signature Music Corner</h2>
+      <div class="music-player-box" id="musicContainer">
+        <div class="music-card">
+          <div class="album-art"><i class="fas fa-music"></i></div>
+          <div class="music-info">
+            <h4 id="songTitle">Lagu Favorit Lury</h4>
+            <p id="songArtist">Penulis / Artist</p>
+            <audio controls id="audioPlayer" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+          </div>
+        </div>
+      </div>
+      <button class="btn-secret" onclick="bukaModalPassword('musik')">
+        <i class="fas fa-key"></i> + Upload Lagu (Owner Only)
+      </button>
+    </section>
+
+    <section id="stories" class="card-popup pastel-pink" data-aos="fade-up">
+      <h2>Stories & Novel Corner</h2>
+      <p class="section-desc">Pilih karakter untuk membaca cerita:</p>
+      
+      <div class="character-tabs">
+        <button class="char-btn active" onclick="pilihKarakter('karakter1')">Karakter A</button>
+        <button class="char-btn" onclick="pilihKarakter('karakter2')">Karakter B</button>
+        <button class="char-btn" onclick="pilihKarakter('karakter3')">Karakter C</button>
+      </div>
+
+      <div class="story-display" id="storyDisplay">
+        <h3 id="storyTitle">Judul Cerita Karakter A</h3>
+        <div class="chapter-list">
+          <span class="badge-chapter">Bab 1: Permulaan</span>
+          <p>Ini adalah potongan bab pertama cerita dari Karakter A...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="card-popup pastel-blue" data-aos="fade-up">
+      <h2>Projects & Creations</h2>
+      
+      <div class="project-group">
+        <h3>Tools Project</h3>
+        <div class="project-card">
+          <i class="fas fa-braille icon-proj"></i>
+          <div>
+            <h4>Braillury</h4>
+            <p>Alat/Tools khusus pembelajaran Braille (Pendidikan Khusus).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <h3>Game Development</h3>
+        <div class="project-grid">
+          <div class="project-card coming-soon">
+            <i class="fas fa-gamepad icon-proj"></i>
+            <div>
+              <h4>Game Project #1</h4>
+              <span class="cs-badge">Coming Soon 🚧</span>
+            </div>
+          </div>
+          <div class="project-card coming-soon">
+            <i class="fas fa-ghost icon-proj"></i>
+            <div>
+              <h4>Game Project #2</h4>
+              <span class="cs-badge">Coming Soon 🚧</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="social-footer" data-aos="fade-up">
+      <div class="social-links">
+        <a href="https://instagram.com/@dnagivors" target="_blank">
+          <i class="fab fa-instagram"></i> @dnagivors
+        </a>
+        <a href="https://tiktok.com/@chocodinaa" target="_blank">
+          <i class="fab fa-tiktok"></i> @chocodinaa
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <h3>Akses Rahasia Owner 🔑</h3>
+      <p>Masukkan password untuk menambah konten:</p>
+      <input type="password" id="passInput" placeholder="Password khusus...">
+      
+      <div id="uploadFormArea" style="display: none;">
+        <input type="text" id="inputCaption" placeholder="Caption Foto / Judul Lagu">
+        <input type="file" id="inputFile" accept="image/*,audio/*">
+      </div>
+
+      <div class="modal-buttons">
+        <button onclick="verifikasiPassword()" id="btnSubmit">Masuk</button>
+        <button onclick="tutupModal()" class="btn-close">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
