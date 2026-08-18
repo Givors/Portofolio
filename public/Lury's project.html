@@ -1,213 +1,191 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lury's World ✨</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lury's Personal Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav class="sidebar">
-    <div class="menu-icon" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <a href="#about" onclick="toggleMenu()">About Me</a>
-      <a href="#studio" onclick="toggleMenu()">Mini Studio</a>
-      <a href="#skills" onclick="toggleMenu()">Skills & Art</a>
-      <a href="#music" onclick="toggleMenu()">Music</a>
-      <a href="#stories" onclick="toggleMenu()">Stories</a>
-      <a href="#projects" onclick="toggleMenu()">Projects</a>
-    </div>
-  </nav>
-
-  <main class="container">
-
-    <section class="hero-section" data-aos="zoom-in" data-aos-duration="1000">
-      <div class="avatar-bubble"></div>
-      <h1>Hi, I'm Lury</h1>
-      <p class="subtitle">Mahasiswa Pendidikan Khusus yang suka coba banyak hal baru!</p>
-    </section>
-
-    <section id="about" class="card-popup pastel-pink" data-aos="flip-up" data-aos-duration="800">
-      <div class="card-tag">About Me</div>
-      <p class="about-text">
-        "Satu kata yang menggambarkan aku adalah <strong>'aneh'</strong>. Awalnya cacian itu membuatku sesak sampai aku sadar, itu memang aku. Menjadi berbeda ternyata tidak buruk."
-      </p>
-    </section>
-
-    <section class="card-popup pastel-yellow" data-aos="fade-up" data-aos-duration="800">
-      <span class="badge">Signature Quote</span>
-      <h3 class="quote-text">"Observe anything in silence, then move ten steps ahead"</h3>
-    </section>
-
-    <section id="studio" class="card-popup pastel-blue" data-aos="zoom-in-up">
-      <h2>Mini Studio of Lury</h2>
-      <p class="section-desc">Momen & foto pilihan terkini:</p>
-      
-      <div class="photo-gallery" id="photoGallery">
-        <div class="photo-card">
-          <img src="https://picsum.photos/300/200?random=1" alt="Studio Moment">
-          <p class="caption">Candid hari ini</p>
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Lury<span>.space</span></h2>
         </div>
-      </div>
-      
-      <button class="btn-secret" onclick="bukaModalPassword('foto')">
-        <i class="fas fa-lock"></i> + Tambah Foto (Owner Only)
-      </button>
-    </section>
+        <ul class="nav-links">
+            <li><a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#feed"><i class="fa-solid fa-camera-retro"></i> Photo Feed</a></li>
+            <li><a href="#karakter"><i class="fa-solid fa-user-astronaut"></i> Karakter</a></li>
+            <li><a href="#music"><i class="fa-solid fa-compact-disc"></i> Vinyl Music</a></li>
+        </ul>
+    </aside>
 
-    <section id="skills" class="card-popup pastel-lavender" data-aos="fade-up">
-      <h2>Skills & Refleksi Diri</h2>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <i class="fas fa-magic"></i>
-          <h4>Perfeksionis Tinggi</h4>
-          <p>Makanya aku suka desain dan jadi editor.</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-brain"></i>
-          <h4>Overthinker</h4>
-          <p>Makanya aku jadi author cerita.</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-palette"></i>
-          <h4>Suka yang Tak Dimiliki</h4>
-          <p>Makanya aku suka gambar & melukis.</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-music"></i>
-          <h4>Pemikir yang Dalam</h4>
-          <p>Makanya suka aransemen lagu & main kalimba.</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-moon"></i>
-          <h4>Suka Begadang</h4>
-          <p>Makanya aku suka nge-game.</p>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-language"></i>
-          <h4>Suka Keunikan</h4>
-          <p>Makanya aku belajar banyak bahasa.</p>
-        </div>
-        <div class="skill-item highlight-skill">
-          <i class="fas fa-rocket"></i>
-          <h4>Suka Coba Hal Baru</h4>
-          <p>Jadilah website ini!</p>
-        </div>
-      </div>
-    </section>
+    <main class="content">
 
-    <section id="music" class="card-popup pastel-purple" data-aos="fade-up">
-      <h2>Signature Music Corner</h2>
-      <div class="music-player-box" id="musicContainer">
-        <div class="music-card">
-          <div class="album-art"><i class="fas fa-music"></i></div>
-          <div class="music-info">
-            <h4 id="songTitle">Lagu Favorit Lury</h4>
-            <p id="songArtist">Penulis / Artist</p>
-            <audio controls id="audioPlayer" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
-          </div>
-        </div>
-      </div>
-      <button class="btn-secret" onclick="bukaModalPassword('musik')">
-        <i class="fas fa-key"></i> + Upload Lagu (Owner Only)
-      </button>
-    </section>
+        <section id="home" class="hero-section" data-aos="fade-down">
+            <h1>Welcome to My Universe ✨</h1>
+            <p class="subtitle">Satu tempat buat cerita, momen foto, dan melodi favoritku.</p>
+        </section>
 
-    <section id="stories" class="card-popup pastel-pink" data-aos="fade-up">
-      <h2>Stories & Novel Corner</h2>
-      <p class="section-desc">Pilih karakter untuk membaca cerita:</p>
-      
-      <div class="character-tabs">
-        <button class="char-btn active" onclick="pilihKarakter('karakter1')">Karakter A</button>
-        <button class="char-btn" onclick="pilihKarakter('karakter2')">Karakter B</button>
-        <button class="char-btn" onclick="pilihKarakter('karakter3')">Karakter C</button>
-      </div>
-
-      <div class="story-display" id="storyDisplay">
-        <h3 id="storyTitle">Judul Cerita Karakter A</h3>
-        <div class="chapter-list">
-          <span class="badge-chapter">Bab 1: Permulaan</span>
-          <p>Ini adalah potongan bab pertama cerita dari Karakter A...</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="card-popup pastel-blue" data-aos="fade-up">
-      <h2>Projects & Creations</h2>
-      
-      <div class="project-group">
-        <h3>Tools Project</h3>
-        <div class="project-card">
-          <i class="fas fa-braille icon-proj"></i>
-          <div>
-            <h4>Braillury</h4>
-            <p>Alat/Tools khusus pembelajaran Braille (Pendidikan Khusus).</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-group">
-        <h3>Game Development</h3>
-        <div class="project-grid">
-          <div class="project-card coming-soon">
-            <i class="fas fa-gamepad icon-proj"></i>
-            <div>
-              <h4>Game Project #1</h4>
-              <span class="cs-badge">Coming Soon 🚧</span>
+        <section id="feed" class="section-container" data-aos="fade-up">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-icons"></i> Daily Moments & Snapshots</h2>
+                <p>Galeri foto ala Instagram update</p>
             </div>
-          </div>
-          <div class="project-card coming-soon">
-            <i class="fas fa-ghost icon-proj"></i>
-            <div>
-              <h4>Game Project #2</h4>
-              <span class="cs-badge">Coming Soon 🚧</span>
+
+            <div class="insta-grid">
+                <div class="insta-card">
+                    <div class="insta-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Avatar" class="avatar">
+                        <div class="user-info">
+                            <span class="username">lury_space</span>
+                            <span class="location">Surabaya, Indonesia</span>
+                        </div>
+                    </div>
+                    <div class="insta-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600" alt="Feed Photo" class="post-img">
+                    </div>
+                    <div class="insta-actions">
+                        <button class="like-btn" onclick="toggleLike(this)"><i class="fa-regular fa-heart"></i></button>
+                        <i class="fa-regular fa-comment"></i>
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </div>
+                    <div class="insta-caption">
+                        <p><strong>lury_space</strong> Menikmati senja sambil merancang project baru. ☕✨</p>
+                        <span class="post-time">2 JAM YANG LALU</span>
+                    </div>
+                </div>
+
+                <div class="insta-card">
+                    <div class="insta-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Avatar" class="avatar">
+                        <div class="user-info">
+                            <span class="username">lury_space</span>
+                            <span class="location">Studio Room</span>
+                        </div>
+                    </div>
+                    <div class="insta-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Feed Photo" class="post-img">
+                    </div>
+                    <div class="insta-actions">
+                        <button class="like-btn" onclick="toggleLike(this)"><i class="fa-regular fa-heart"></i></button>
+                        <i class="fa-regular fa-comment"></i>
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </div>
+                    <div class="insta-caption">
+                        <p><strong>lury_space</strong> (Isi caption foto keduamu di sini yaa!)</p>
+                        <span class="post-time">1 HARI YANG LALU</span>
+                    </div>
+                </div>
+
+                <div class="insta-card">
+                    <div class="insta-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Avatar" class="avatar">
+                        <div class="user-info">
+                            <span class="username">lury_space</span>
+                            <span class="location">Cozy Corner</span>
+                        </div>
+                    </div>
+                    <div class="insta-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600" alt="Feed Photo" class="post-img">
+                    </div>
+                    <div class="insta-actions">
+                        <button class="like-btn" onclick="toggleLike(this)"><i class="fa-regular fa-heart"></i></button>
+                        <i class="fa-regular fa-comment"></i>
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </div>
+                    <div class="insta-caption">
+                        <p><strong>lury_space</strong> (Tempat foto ketiga dan caption aesthetic-mu selanjutnya!)</p>
+                        <span class="post-time">3 HARI YANG LALU</span>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <footer class="social-footer" data-aos="fade-up">
-      <div class="social-links">
-        <a href="https://instagram.com/@dnagivors" target="_blank">
-          <i class="fab fa-instagram"></i> @dnagivors
-        </a>
-        <a href="https://tiktok.com/@chocodinaa" target="_blank">
-          <i class="fab fa-tiktok"></i> @chocodinaa
-        </a>
-      </div>
-    </footer>
+        <section id="karakter" class="section-container" data-aos="fade-up">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-masks-theater"></i> Template Karakter</h2>
+                <p>Galeri profil karakter & side bab</p>
+            </div>
+            
+            <div class="char-nav-buttons">
+                <button class="char-btn active" onclick="pilihKarakter('karakter1', this)">Karakter 1</button>
+                <button class="char-btn" onclick="pilihKarakter('karakter2', this)">Karakter 2</button>
+                <button class="char-btn" onclick="pilihKarakter('karakter3', this)">Karakter 3</button>
+            </div>
 
-  </main>
+            <div class="char-card">
+                <div class="char-photo-container">
+                    <img id="charPhoto" src="https://via.placeholder.com/220x280/1a1a2e/ffffff?text=Foto+Karakter+1" alt="Foto Karakter">
+                </div>
+                <div class="char-info">
+                    <h3 id="charName">Nama Karakter 1</h3>
+                    <span id="charChapter" class="badge">Side Bab: Chapter 1</span>
+                    <div id="charStory" class="story-box">
+                        <p><em>(Teks cerita masih kosong. Siap diisi nanti ketika kamu dapat ide!)</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <div id="passwordModal" class="modal">
-    <div class="modal-content">
-      <h3>Akses Rahasia Owner 🔑</h3>
-      <p>Masukkan password untuk menambah konten:</p>
-      <input type="password" id="passInput" placeholder="Password khusus...">
-      
-      <div id="uploadFormArea" style="display: none;">
-        <input type="text" id="inputCaption" placeholder="Caption Foto / Judul Lagu">
-        <input type="file" id="inputFile" accept="image/*,audio/*">
-      </div>
+        <section id="music" class="section-container" data-aos="fade-up">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-record-vinyl"></i> Vinyl Music Player</h2>
+                <p>Putar lagu favorit dengan efek piringan hitam</p>
+            </div>
 
-      <div class="modal-buttons">
-        <button onclick="verifikasiPassword()" id="btnSubmit">Masuk</button>
-        <button onclick="tutupModal()" class="btn-close">Batal</button>
-      </div>
-    </div>
-  </div>
+            <div class="music-player-container">
+                <div class="vinyl-wrapper">
+                    <div class="vinyl-record" id="vinylRecord">
+                        <div class="vinyl-groove"></div>
+                        <div class="vinyl-label">
+                            <img id="albumCoverCenter" src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=300" alt="Album Center">
+                        </div>
+                    </div>
+                </div>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
+                <div class="music-details">
+                    <div class="album-badge">
+                        <img id="albumCover" src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=300" alt="Cover Album">
+                        <div class="album-text">
+                            <h3 id="songTitle">Retro Cyber Vibe</h3>
+                            <p id="songArtist"><i class="fa-solid fa-user-ninja"></i> Artis: Lury Sound Lab</p>
+                            <p id="songYear"><i class="fa-solid fa-calendar-check"></i> Tahun Rilis: 2024</p>
+                        </div>
+                    </div>
+
+                    <audio id="audioPlayer" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+                    <div class="controls-wrapper">
+                        <div class="time-info">
+                            <span id="currentTime">00:00</span>
+                            <input type="range" id="progressBar" value="0" min="0" max="100">
+                            <span id="durationTime">00:00</span>
+                        </div>
+
+                        <div class="player-buttons">
+                            <button id="prevBtn" class="control-btn"><i class="fa-solid fa-backward-step"></i></button>
+                            <button id="playBtn" class="control-btn play-main"><i class="fa-solid fa-play" id="playIcon"></i></button>
+                            <button id="nextBtn" class="control-btn"><i class="fa-solid fa-forward-step"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="lyrics-container">
+                        <h4><i class="fa-solid fa-quote-left"></i> Lirik Lagu:</h4>
+                        <div id="songLyrics" class="lyrics-box">
+                            Lirik lagu akan muncul di sini...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
