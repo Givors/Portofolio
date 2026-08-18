@@ -1,4 +1,3 @@
-// Init AOS
 AOS.init({ duration: 800, once: true });
 
 // Toggle Like Button Instagram Card
@@ -14,7 +13,6 @@ function toggleLike(btn) {
     }
 }
 
-// Template Karakter Data
 const templateKarakter = {
     karakter1: {
         nama: "Nama Karakter 1",
@@ -50,7 +48,44 @@ function pilihKarakter(key, element) {
     }
 }
 
-// Playlist & Music Player
+document.querySelectorAll('.nav-links a, .char-btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+        let x = e.clientX - e.target.getBoundingClientRect().left;
+        let y = e.clientY - e.target.getBoundingClientRect().top;
+
+        let ripples = document.createElement('span');
+        ripples.className = 'ripple';
+        ripples.style.left = x + 'px';
+        ripples.style.top = y + 'px';
+        
+        this.appendChild(ripples);
+
+        setTimeout(() => {
+            ripples.remove();
+        }, 600);
+    });
+});
+
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLi.forEach((a) => {
+        a.classList.remove("active");
+        if (a.getAttribute("href") === `#${current}`) {
+            a.classList.add("active");
+        }
+    });
+});
+
 const playlist = [
     {
         judul: "Retro Cyber Vibe",
